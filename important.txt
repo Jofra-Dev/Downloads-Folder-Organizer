@@ -1,4 +1,0 @@
-sudo systemctl stop file-organizer
-sudo systemctl disable file-organizer
-
-sudo systemctl start file-organizer
