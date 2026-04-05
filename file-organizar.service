@@ -1,0 +1,17 @@
+[Unit]
+Description=File Organizer Service
+After=network.target
+
+[Service]
+Type=simple
+User=jofra
+Group=jofra
+WorkingDirectory=/opt/file-organizer
+ExecStart=/opt/file-organizer/venv/bin/python /opt/file-organizer/main.py
+Restart=on-failure
+RestartSec=10
+Environment="PATH=/opt/file-organizer/venv/bin:/usr/local/bin:/usr/bin:/bin"
+ReadWritePaths=/home/jofra/Downloads /var/log/file-organizer
+
+[Install]
+WantedBy=multi-user.target
